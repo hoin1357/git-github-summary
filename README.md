@@ -1,4 +1,4 @@
-# git-github-summary
+# git-github-summary (code로 봐주세요)
 
 # clone(github,gitbuket 등)
 :원격 저장소를  local repository에 복사
