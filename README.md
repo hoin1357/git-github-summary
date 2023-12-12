@@ -163,8 +163,30 @@ _________
 sqush DD
 s EE
 
-            
+# Reset
+커밋 이력에서 이전커밋을 돌아감(roll back)
+- 이력이 모두 사라짐, 깃 저장소는 이전 커밋 내용으로 돌아감
+$ git reset [HEAD~n]
 
+reset 옵션
+$ git reset --hard [bname] :모든 공간에 복사(GR,SA,WD)
+$ git reset --mixed [bname] :GR과 SA에만 복사
+$ git reset --soft [bname] :GR에만 복사, 나머지는 그대로 남음
+
+ + Reset 후 원래 상태로 되돌리기
+$ git reset --hard ORIG_HEAD
+
+checkout과 reset의 차이: checkout은 이력이 남고 HEAD만 바뀌지만 reset은 앞전 커밋이 지워진다
+
+# 커밋취소 revert
+:지정커밋을 취소해 이전 상태가 된다
+ clean해야 가능,커밋 이력을 없애는 것이 아닌 새 커밋을 만들어 복원한다
+ a-b-c  revert b->  a-b-c-b
+
+ conflict 발생시
+ 파일수정->$ git add fname->$ git revert --continue
+
+ $ git revert [HEAD~n] --no-edit : 이전 커밋 메세지 그대로 사용한다
 
 
 
